@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حيدر صباح</title>
+    <style>
+        :root {
+            --green-color: #007a3d;
+            --red-color: #ce1126;
+            --black-color: #111111;
+            --gold-color: #d4af37;
+            --bg-color: #0d0f12;
+            --card-bg: rgba(22, 27, 34, 0.85);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0c0e 0%, #1a1e24 100%);
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            background: var(--card-bg);
+            border: 2px solid var(--gold-color);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-bar {
+            height: 5px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--red-color), var(--gold-color), var(--green-color));
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0px 2px 5px rgba(212, 175, 55, 0.4));
+        }
+
+        .profile-img-wrapper {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--green-color), var(--gold-color), var(--red-color));
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin: 10px 0 5px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            color: var(--gold-color);
+            font-size: 15px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .link-btn:hover {
+            background: var(--green-color);
+            border-color: var(--gold-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 122, 61, 0.4);
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-bar"></div>
+        
+        <!-- شعار الحشد الشعبي -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Popular_Mobilization_Forces_logo.svg" alt="شعار الحشد الشعبي" class="logo-img">
+
+        <!-- الصورة الشخصية -->
+        <div class="profile-img-wrapper">
+            <img src="https://via.placeholder.com/150" alt="حيدر صباح" class="profile-img">
+        </div>
+
+        <h1>حيدر صباح</h1>
+        <div class="subtitle">الصفحة الرسمية</div>
+
+        <div class="links-container">
+            <a href="https://www.instagram.com/6z_l_?rpxt=MWt5MWVtMGNocHI2MQ==" class="link-btn" target="_blank">
+                📷 حساب الإنستغرام
+            </a>
+            <a href="https://youtube.com" class="link-btn" target="_blank">
+                🎥 قناة اليوتيوب
+            </a>
+            <a href="https://facebook.com" class="link-btn" target="_blank">
+                📘 حساب الفيسبوك
+            </a>
+            <a href="https://tiktok.com" class="link-btn" target="_blank">
+                🎵 حساب التيك توك
+            </a>
+        </div>
+
+        <div class="footer">
+            جميع الحقوق محفوظة © حيدر صباح
+        </div>
+    </div>
+
+</body>
+</html>
