@@ -3,68 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حيدر صباح</title>
+    <title>حيدر صباح | Haider Sabah</title>
+    <!-- استيراد خط القاهرة -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- استيراد أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --green-color: #007a3d;
-            --red-color: #ce1126;
-            --black-color: #111111;
-            --gold-color: #d4af37;
-            --bg-color: #0d0f12;
-            --card-bg: rgba(22, 27, 34, 0.85);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0c0e 0%, #1a1e24 100%);
+            background-color: #0d0f12;
             color: #ffffff;
-            margin: 0;
-            padding: 20px;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* خلفية جمالية شعاعية */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 20%, rgba(212, 160, 23, 0.15) 0%, transparent 60%);
+            z-index: -1;
         }
 
         .container {
             width: 100%;
-            max-width: 420px;
-            background: var(--card-bg);
-            border: 2px solid var(--gold-color);
+            max-width: 450px;
+            text-align: center;
+            background: rgba(20, 24, 33, 0.85);
+            border: 1px solid rgba(212, 160, 23, 0.3);
             border-radius: 20px;
             padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
         }
 
-        .header-bar {
-            height: 5px;
-            width: 100%;
-            background: linear-gradient(90deg, var(--red-color), var(--gold-color), var(--green-color));
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .logo-img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 15px;
-            filter: drop-shadow(0px 2px 5px rgba(212, 175, 55, 0.4));
-        }
-
-        .profile-img-wrapper {
+        /* حاوية الصورة الشخصية والشعار */
+        .profile-container {
             position: relative;
             width: 120px;
             height: 120px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(135deg, var(--green-color), var(--gold-color), var(--red-color));
+            margin: 0 auto 20px;
         }
 
         .profile-img {
@@ -72,94 +65,212 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #fff;
+            border: 3px solid #d4a017;
+            box-shadow: 0 0 20px rgba(212, 160, 23, 0.4);
+        }
+
+        .logo-badge {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            object-fit: cover;
+            background: #000;
         }
 
         h1 {
-            font-size: 26px;
-            margin: 10px 0 5px;
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 5px;
             color: #ffffff;
-            letter-spacing: 0.5px;
         }
 
-        .subtitle {
-            color: var(--gold-color);
-            font-size: 15px;
-            margin-bottom: 25px;
+        .bio-title {
+            font-size: 14px;
+            color: #d4a017;
+            margin-bottom: 20px;
             font-weight: 600;
+            letter-spacing: 1px;
         }
 
-        .links-container {
+        /* شاشة كلمة السر */
+        .lock-screen {
             display: flex;
             flex-direction: column;
             gap: 12px;
+            background: rgba(13, 15, 18, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px dashed rgba(212, 160, 23, 0.4);
+        }
+
+        .lock-screen i {
+            font-size: 28px;
+            color: #d4a017;
+            margin-bottom: 5px;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 160, 23, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .password-input:focus {
+            border-color: #d4a017;
+            box-shadow: 0 0 10px rgba(212, 160, 23, 0.3);
+        }
+
+        .unlock-btn {
+            background: #d4a017;
+            color: #0d0f12;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .unlock-btn:hover {
+            background: #f1b81a;
+            transform: translateY(-2px);
+        }
+
+        .error-msg {
+            color: #ff4d4d;
+            font-size: 13px;
+            display: none;
+            margin-top: 5px;
+        }
+
+        /* قائمة الروابط (مخفية افتراضياً) */
+        .links-list {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .link-btn {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.05);
+            justify-content: space-between;
+            background: linear-gradient(135deg, rgba(212, 160, 23, 0.15) 0%, rgba(20, 24, 33, 0.9) 100%);
+            border: 1px solid rgba(212, 160, 23, 0.4);
+            border-radius: 12px;
+            padding: 15px 20px;
             color: #ffffff;
             text-decoration: none;
-            padding: 14px 20px;
-            border-radius: 30px;
+            font-weight: 600;
             font-size: 16px;
-            font-weight: bold;
-            border: 1px solid rgba(212, 175, 55, 0.3);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .link-btn:hover {
-            background: var(--green-color);
-            border-color: var(--gold-color);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 122, 61, 0.4);
+            background: linear-gradient(135deg, rgba(212, 160, 23, 0.3) 0%, rgba(30, 36, 48, 0.9) 100%);
+            border-color: #d4a017;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(212, 160, 23, 0.3);
+        }
+
+        .link-btn i {
+            font-size: 20px;
+            color: #d4a017;
+        }
+
+        .link-btn span {
+            flex-grow: 1;
+            text-align: center;
         }
 
         .footer {
-            margin-top: 25px;
+            margin-top: 30px;
             font-size: 12px;
-            color: #888;
+            color: rgba(255, 255, 255, 0.4);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="header-bar"></div>
-        
-        <!-- شعار الحشد الشعبي -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Popular_Mobilization_Forces_logo.svg" alt="شعار الحشد الشعبي" class="logo-img">
-
-        <!-- الصورة الشخصية -->
-        <div class="profile-img-wrapper">
-            <img src="https://via.placeholder.com/150" alt="حيدر صباح" class="profile-img">
+        <!-- الصورة الشخصية وشعار الحشد -->
+        <div class="profile-container">
+            <img src="myphoto.jpg" alt="حيدر صباح" class="profile-img">
+            <img src="logo.png" alt="الشعار" class="logo-badge">
         </div>
 
+        <!-- الاسم والعنوان -->
         <h1>حيدر صباح</h1>
-        <div class="subtitle">الصفحة الرسمية</div>
+        <div class="bio-title">Haider Sabah</div>
 
-        <div class="links-container">
-            <a href="https://www.instagram.com/6z_l_?rpxt=MWt5MWVtMGNocHI2MQ==" class="link-btn" target="_blank">
-                📷 حساب الإنستغرام
+        <!-- قسم الحماية بكلمة السر -->
+        <div class="lock-screen" id="lockScreen">
+            <i class="fa-solid fa-lock"></i>
+            <p style="font-size: 14px; color: #ccc;">أدخل كلمة السر لعرض الروابط</p>
+            <input type="password" id="passInput" class="password-input" placeholder="كلمة السر...">
+            <button onclick="checkPassword()" class="unlock-btn">دخول</button>
+            <div id="errorMsg" class="error-msg">كلمة السر غير صحيحة!</div>
+        </div>
+
+        <!-- قائمة الروابط (تظهر بعد إدخال كلمة السر الصحيحة) -->
+        <div class="links-list" id="linksList">
+            <a href="https://instagram.com/6z_l_" target="_blank" class="link-btn">
+                <i class="fa-brands fa-instagram" style="color: #E1306C;"></i>
+                <span>انستغرام</span>
+                <i class="fa-solid fa-chevron-left" style="font-size: 12px; opacity: 0.5;"></i>
             </a>
-            <a href="https://youtube.com" class="link-btn" target="_blank">
-                🎥 قناة اليوتيوب
+
+            <a href="https://facebook.com" target="_blank" class="link-btn">
+                <i class="fa-brands fa-facebook" style="color: #1877F2;"></i>
+                <span>فيسبوك</span>
+                <i class="fa-solid fa-chevron-left" style="font-size: 12px; opacity: 0.5;"></i>
             </a>
-            <a href="https://facebook.com" class="link-btn" target="_blank">
-                📘 حساب الفيسبوك
-            </a>
-            <a href="https://tiktok.com" class="link-btn" target="_blank">
-                🎵 حساب التيك توك
+
+            <a href="https://youtube.com" target="_blank" class="link-btn">
+                <i class="fa-brands fa-youtube" style="color: #FF0000;"></i>
+                <span>قناة اليوتيوب (Dreamy Days)</span>
+                <i class="fa-solid fa-chevron-left" style="font-size: 12px; opacity: 0.5;"></i>
             </a>
         </div>
 
         <div class="footer">
-            جميع الحقوق محفوظة © حيدر صباح
+            جميع الحقوق محفوظة © 2026
         </div>
     </div>
 
+    <script>
+        function checkPassword() {
+            const input = document.getElementById('passInput').value;
+            const correctPass = "2007/16/6";
+            const lockScreen = document.getElementById('lockScreen');
+            const linksList = document.getElementById('linksList');
+            const errorMsg = document.getElementById('errorMsg');
+
+            if (input === correctPass) {
+                lockScreen.style.display = 'none';
+                linksList.style.display = 'flex';
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
